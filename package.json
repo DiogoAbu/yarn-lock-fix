@@ -4,7 +4,8 @@
   "description": "Update yarn.lock whenever package.json changes",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "scripts/run-postinstall.js"
   ],
   "repository": "https://github.com/DiogoAbu/yarn-lock-fix.git",
   "author": "Diogo de Azevedo Silva <diogodeazevedosilva@gmail.com>",
