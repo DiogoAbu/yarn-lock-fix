@@ -19,7 +19,7 @@
     "lint": "yarn eslint && yarn prettier",
     "lint-fix": "yarn eslint --fix && yarn prettier --write",
     "prepare": "husky install",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package || exit 0"
   },
   "lint-staged": {
     "*.{j,t}s{,x}": "eslint --config ./.eslintrc --cache --fix",
