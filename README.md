@@ -30,7 +30,7 @@ When you want to lock your deps, you may want to run `yarn install` with `--froz
 
 This package is used to keep yarn.lock up-to-date and prevent the command above to fail.
 
-The command should run on the pre-commit hook, it will update and stage the `yarn.lock` file.
+The command should run on the pre-commit hook, it will update and stage the `yarn.lock` file if `package.json` is staged.
 
 ## 🔧 Installation
 

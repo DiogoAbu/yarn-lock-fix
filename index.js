@@ -14,7 +14,7 @@ const exec = util.promisify(require('child_process').exec);
   }
 
   if (!files.includes('package.json')) {
-    console.info('Nothing changed on package.json');
+    console.info('Nothing changed on package.json or not staged');
     process.exit(0);
   }
 
