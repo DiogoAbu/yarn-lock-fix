@@ -18,7 +18,8 @@
     "prettier": "prettier .releaserc.json \".vscode/**/*.json\" \"**/*.json\" --config ./.prettierrc --check",
     "lint": "yarn eslint && yarn prettier",
     "lint-fix": "yarn eslint --fix && yarn prettier --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "patch-package"
   },
   "lint-staged": {
     "*.{j,t}s{,x}": "eslint --config ./.eslintrc --cache --fix",
@@ -42,6 +43,8 @@
     "eslint-plugin-unused-imports": "1.1.1",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "2.2.1",
     "semantic-release": "^17.4.2"
   }
