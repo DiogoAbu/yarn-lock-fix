@@ -14,13 +14,13 @@ const exec = util.promisify(require('child_process').exec);
   }
 
   if (!files.includes('package.json')) {
-    console.info('Nothing changed on package.json or not staged');
+    console.log('Nothing changed on package.json or not staged');
     process.exit(0);
   }
 
   try {
     await exec('yarn install --frozen-lockfile');
-    console.info('Lockfile is up-to-date or does not exists');
+    console.log('Lockfile is up-to-date or does not exists');
     process.exit(0);
   } catch (err) {
     if (!err.stderr.includes('lockfile needs to be updated')) {
