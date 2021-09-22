@@ -14,13 +14,11 @@ const exec = util.promisify(require('child_process').exec);
   }
 
   if (!files.includes('package.json')) {
-    console.log('Nothing changed on package.json or not staged');
     process.exit(0);
   }
 
   try {
     await exec('yarn install --frozen-lockfile');
-    console.log('Lockfile is up-to-date or does not exists');
     process.exit(0);
   } catch (err) {
     if (!err.stderr.includes('lockfile needs to be updated')) {
@@ -30,10 +28,8 @@ const exec = util.promisify(require('child_process').exec);
   }
 
   try {
-    console.log('Updating lockfile');
     await exec('yarn install --non-interactive');
     await exec('git add yarn.lock');
-    console.log('Successfully updated and staged lockfile');
     process.exit(0);
   } catch (err) {
     console.error('Could not update lockfile');
